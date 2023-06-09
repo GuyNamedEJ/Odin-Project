@@ -1,0 +1,39 @@
+#grid-container {
+    display: grid;
+    border: 1px solid black;
+    width: 800px;
+    height: 800px;
+  }
+  .cell {
+    border: 1px solid lightgrey;
+  }
+
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% auto;
+    gap:25px;
+  }
+
+  .settings{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+  }
+  
+  h1{
+    text-align: center;
+  }
+
+  #color-picker{
+    border:none;
+    cursor:pointer;
+    background-color: transparent;
+    height:100px;
+    width: 100px;
+  }
+
+  #color-picker::-webkit-color-swatch{
+    border-radius: 50%;
+  }
