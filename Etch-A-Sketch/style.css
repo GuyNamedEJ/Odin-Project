@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap');
+
+body{
+  font-family: 'Gasoek One', sans-serif;
+}
+
+
 #grid-container {
     display: grid;
     border: 1px solid black;
-    width: 800px;
-    height: 800px;
+    width: 960px;
+    height: 960px;
   }
   .cell {
     border: 1px solid lightgrey;
@@ -12,8 +19,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 5% auto;
+    /* margin: 0 auto; */
     gap:25px;
+    width: 100%;
   }
 
   .settings{
@@ -24,6 +32,7 @@
   
   h1{
     text-align: center;
+    letter-spacing: 2px;
   }
 
   #color-picker{
@@ -36,4 +45,36 @@
 
   #color-picker::-webkit-color-swatch{
     border-radius: 50%;
+  }
+
+  .btn{
+    padding:10px;
+    font-family: 'Gasoek One', sans-serif;
+    border: none;
+    color:black;
+    letter-spacing: 2px;
+    background-color: wheat;
+  }
+
+  .btn:hover{
+    background-color: peru;
+    cursor: pointer;
+    color: white;
+  }
+
+  .settings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    #grid-container{
+      width: 400px;
+      height: 400px;
+    }
+
+    .container{
+      flex-direction: column;
+    }
   }

@@ -4,7 +4,6 @@ const START_COLOR = '#000000'
 
 
 let grid = document.querySelector('#grid-container')
-let createBtn = document.querySelector('#create')
 let resetBtn = document.querySelector('#reset')
 let sizeDisplay = document.querySelector('#size-display')
 let sizeSlider = document.getElementById('size')
@@ -12,31 +11,22 @@ let size = sizeSlider.value
 let colorPicker = document.querySelector('#color-picker')
 let color = START_COLOR
 
-createBtn.addEventListener('click', generateGrid(size))
 resetBtn.addEventListener('click', reset)
 sizeSlider.addEventListener('input', (e) => {
     updateSize(e.target.value)
 })
+
 colorPicker.addEventListener('input', (e) => {
     updateColor(e.target.value)
 })
 
-
-updateSize(size)
-
 function updateColor(newColor){
-    color = colorPicker.value
+    color = newColor
     console.log(color)
 }
 
 function changeColor(e){
         e.target.style.background = `${color}`
-}
-
-function eraser(e){
-    if (e.type === 'mouseover' && !mouseDown) return
-    else
-        e.target.style.background = 'white'
 }
 
 function updateSize(size){
@@ -61,10 +51,14 @@ function generateGrid(size){
     }
 }
 
-
 function reset(){
-    size = START_SIZE
     grid.innerHTML = ''
-    generateGrid(size)
+    size = START_SIZE
     sizeDisplay.innerHTML = `${START_SIZE} x ${START_SIZE}`
+    sizeSlider.value = START_SIZE
+    generateGrid(size)
+}
+
+window.onload = () =>{
+    reset()
 }

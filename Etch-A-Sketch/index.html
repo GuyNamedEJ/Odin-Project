@@ -5,18 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-a-Sketch</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Etch-a-sketch</h1>
+    
     <div class="container">
-      <div id="grid-container"></div>
+      <div>
+        <h1>Etch-a-sketch</h1>
+        <div id="grid-container"></div>
+      </div>
       <div class="settings">
         <input name="color" type="color" id="color-picker" value="#000000" />
         <label id="size-display" for="color"></label>
         <input type="range" min="4" max="64" value="16" id="size" />
-        <button id="reset">Reset to Default</button>
-        <button id="create">Create New Grid</button>
+        <button class="btn" id="reset">Reset</button>
       </div>
     </div>
   </body>
